@@ -384,9 +384,7 @@ export async function followUser(formData: FormData) {
   const follows = await prisma.follows.findUnique({
     where: {
       followerId_followingId: {
-        // followerId is of the person who wants to follow
         followerId: userId,
-        // followingId is of the person who is being followed
         followingId: id,
       },
     },
